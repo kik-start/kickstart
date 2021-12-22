@@ -5,9 +5,9 @@ import pickle
 # Placeholders to initialize model
 # category = 'Fashion'
 # currency = 'USD'
-# goal = 100
+# goal = 1000
 # month = 'july'
-# backers= 1000
+# backers= 10
 # campaign_length = 20
 # campaign_name_length = 20
 
@@ -17,7 +17,7 @@ import pickle
 #            'campaign_length':[campaign_length],'name_char_length':[campaign_name_length]})
 
 def model(input_data):
-    rf = pickle.load(open('rf_model_pickle_2.pkl', 'rb'))
+    rf = pickle.load(open('./rf_model_pickle_2.pkl', 'rb'))
     pred = rf.predict(input_data)
     return pred
 
