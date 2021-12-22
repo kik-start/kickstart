@@ -7,7 +7,7 @@ from category_encoders import OrdinalEncoder
 import pickle
 import joblib
 
-df=pd.read_csv('kickstarter/ks-projects-201801.csv',
+df=pd.read_csv('../ks-projects-201801.csv',
                parse_dates=['deadline','launched'],
                usecols=['name','main_category','launched',
                         'deadline','currency','goal',
@@ -57,7 +57,7 @@ model=make_pipeline(
 
 model.fit(X_train,y_train)
 
-# pickle.dump(model,open('rf_model_pickle_2','wb'))
+# pickle.dump(model,open('rf_model_pickle_2.pkl','wb'))
 
 # training_acc = model.score(X_train, y_train)
 # print(training_acc)
