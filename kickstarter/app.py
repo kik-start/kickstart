@@ -35,16 +35,16 @@ def create_app():
            'campaign_length':[campaign_length],'name_char_length':[campaign_name_length]})
             prediction = model(input_data)
         return render_template('data.html', 
-                            #    form_data=form_data, 
-                            #    goal=goal, 
-                            #    month=month, 
-                            #    campaign_name_length=campaign_name_length, 
-                            #    num_backers=num_backers, 
-                            # #    campaign_name=campaign_name, 
-                            #    campaign_length=campaign_length, 
-                            # #    percentage_pledged=percentage_pledged, 
-                            #    currency=currency, 
-                            #    category=category, 
+                               form_data=form_data, 
+                               goal=goal, 
+                               month=month, 
+                               campaign_name_length=campaign_name_length, 
+                               num_backers=num_backers, 
+                               campaign_name=campaign_name, 
+                               campaign_length=campaign_length, 
+                            #    percentage_pledged=percentage_pledged, 
+                               currency=currency, 
+                               category=category, 
                                prediction=prediction)
 
     return app
