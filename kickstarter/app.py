@@ -30,10 +30,12 @@ def create_app():
             goal = request.form.get('goal')
             num_backers = request.form.get('num_backers')
             month = request.form.get('month')
+            
             input_data = pd.DataFrame({'category':[category],'currency':[currency],
            'goal':[goal],'launched':[month],'backers':[num_backers],
            'campaign_length':[campaign_length],'name_char_length':[campaign_name_length]})
             prediction = model(input_data)
+            
         return render_template('data.html', 
                                form_data=form_data, 
                                goal=goal, 
