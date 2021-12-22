@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='base.css')}}">
+
+<html>
+
+  <head>
+    <title>Kickstarter {{ title }}</title>
+    <link rel="stylesheet" href="https://unpkg.com/picnic" />
+  </head>
+
+  <body>
+    <style>
+        body {
+          background-color: rgba(131, 137, 185, 0.39);
+        }
+        </style>
+    <article class="flex two" style="padding: 3em 1em;">
+      {% block content %}
+ 
+        <form action="/data" method = "POST">
+          <p>Campaign Name <input type = "text" name = "campaign_name" /></p>
+          <p>Percent Pledged<input type = "number" name = "percentage_pledged" /></p>
+          <p>Number of Backers<input type = "number" name = "num_backers" /></p>
+          <p>Goal of the campaign</p><input type = "number" name = "goal" /></p>
+          <p>Length of the campaign (in days):<input type = "number" name = "campaign_length" /></p> </p>
+          <label for="launched">Choose the month the campaign was launched:</label>
+<select name="month" id="month">
+        <option value="january">January</option> 
+        <option value="february">February</option>
+        <option value="march">March</option>
+        <option value="april">April</option>
+        <option value="may">May</option>
+        <option value="june">June</option>
+        <option value="july">July</option>
+        <option value="august">August</option>
+        <option value="september">September</option>
+        <option value="october">October</option>
+        <option value="november">November</option>
+        <option value="december">December</option>
+        </select>
+          <label for="currency">Choose a currency:</label>
+<select name="currency" id="currency">
+        <option value="USD">USD</option> 
+        <option value="GBP">GBP</option>
+        <option value="EUR">EUR</option>
+        <option value="CAD">CAD</option>
+        <option value="AUD">AUD</option>
+        <option value="SEK">SEK</option>
+        <option value="MXN">MXN</option>
+        <option value="NZD">NZD</option>
+        <option value="DKK">DKK</option>
+        <option value="CHF">CHF</option>
+        <option value="NOK">NOK</option>
+        <option value="HKD">HKD</option>
+        <option value="SGD">SGD</option>
+        <option value="JPY">JPY</option>
+        </select>
+<label for="category">Choose a category:</label>
+<select name="category" id="category">
+        <option value="Art">Art</option>
+        <option value="Comics">Comics</option>
+        <option value="Crafts">Crafts</option>
+        <option value="Dance">Dance</option>
+        <option value="Design">Design</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Film & Video">Film & Video</option>
+        <option value="Food">Food</option>
+        <option value="Games">Games</option>
+        <option value="Journalism">Journalism</option>
+        <option value="Music">Music</option>
+        <option value="Photography">Photography</option>
+        <option value="Publishing">Publishing</option>
+        <option value="Technology">Technology</option>
+        <option value="Theater">Theater</option>    
+    </select>
+          <p><input type = "submit" value = "Submit" /></p>
+      </form>
+
+      </div>
+      {% endblock %}
+    </article>
+  </body>
+</html>
