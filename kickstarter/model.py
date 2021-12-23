@@ -19,6 +19,6 @@ import pickle
 def model(input_data):
     rf = pickle.load(open('rf_model_pickle_2.pkl', 'rb'))
     pred = rf.predict(input_data)
-    return pred
+    return pred[0].upper()
 
 # print(model(input_data))
