@@ -34,7 +34,7 @@ def create_app():
             input_data = pd.DataFrame({'category':[category],'currency':[currency],
            'goal':[goal],'launched':[month],'backers':[num_backers],
            'campaign_length':[campaign_length],'name_char_length':[campaign_name_length]})
-            prediction = model(input_data)
+            prediction = model(input_data)[0].upper()
             
         return render_template('data.html', 
                                form_data=form_data, 
